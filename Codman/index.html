@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Codman</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- jquery.min.js should be loaded before jquery.tablesorter.min.js because tablesorter requires basice jquery -->
+<script
+  type="text/JavaScript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+></script>
+<script
+  type="text/JavaScript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"
+></script>
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+<style>
+
+    .w3-bar .w3-button {
+ padding: 16px; color: darkblue;
+}
+
+body, html {
+  height: 100%;
+}
+
+.w3-content {
+  padding: 20px; /* Add some padding to all sides */
+  max-width: 1100px; /* Limit maximum width */
+  margin: 0 auto; /* Center align content */
+}
+
+h1{
+  filter: drop-shadow(5px 0px 5px rgba(0, 0, 0, 0.5));
+  color: darkblue;
+}
+
+h2{
+  filter: drop-shadow(5px 0px 5px rgba(0, 0, 0, 0.5));
+  color: orange;
+}
+
+h3{
+  filter: drop-shadow(5px 0px 5px rgba(0, 0, 0, 0.5));
+  color: darkblue;
+}
+
+body {
+  background-color: rgb(41, 165, 220) ;
+}
+
+/* CSS for hiding the nav-links on small screens */
+@media screen and (max-width: 992px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+  .lightbox-caption {
+    background-color: orange;
+    color: blue;
+    padding: 10px;
+    text-align: center;
+  }
+
+
+
+</style>
+</head>
+<body>
+
+  
+
+  <div class="w3-top">
+    <div class="w3-bar w3-orange w3-card-4">
+      <div class="logo w3-container w3-center w3-content">
+        <a href="#home" class="logo w3-bar-item w3-button w3-container w3-content w3-hover-blue"><img src="Asset-1.gif" alt="Logo"></a>
+      </div>
+      <div class="w3-left w3-hide-small">
+        <a href="#welcome" class="w3-bar-item w3-button w3-hover-blue">WELCOME</a>
+        <a href="#about" class="w3-bar-item w3-button w3-hover-blue">ABOUT</a>
+        <a href="#schedule" class="w3-bar-item w3-button w3-hover-blue">SCHEDULE</a>
+        <a href="#learn" class="w3-bar-item w3-button w3-hover-blue">LEARN</a>
+        <a href="#gallery" class="w3-bar-item w3-button w3-hover-blue">GALLERY</a>
+      </div>
+      <div class="w3-right w3-hide-small">
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-blue">
+          <i class="fa fa-search"></i>
+        </a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-blue">
+          <i class="fa fa-shopping-cart w3-margin-right"></i>
+        </a>
+      </div>
+      <!-- Menu button for small screens -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right w3-hover-blue" id="menuButton" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+    </div>
+  </div>
+  
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-orange w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display: none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close &times;</a>
+    <a href="#welcome" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue">WELCOME</a>
+    <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue">ABOUT</a>
+    <a href="#schedule" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue">SCHEDULE</a>
+    <a href="#learn" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue">LEARN</a>
+    <a href="#gallery" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-blue">GALLERY</a>
+  </nav>
+  
+  <script>
+    // Toggle between showing and hiding the sidebar when clicking the menu icon
+    var mySidebar = document.getElementById("mySidebar");
+  
+    function w3_open() {
+      if (mySidebar.style.display === "block") {
+        mySidebar.style.display = "none";
+      } else {
+        mySidebar.style.display = "block";
+      }
+    }
+  
+    // Close the sidebar with the close button
+    function w3_close() {
+      mySidebar.style.display = "none";
+    }
+  </script>
+  
+
+      <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="w3-image" src="Codman-pool.jpg" alt="Codman Pool" width="100%">
+        <div class="w3-display-middle w3-margin-top w3-center">
+          <img class="w3-image" src="Artboard 10.jpg"
+        </div>
+
+      </header>
+
+      <div class="w3-content" style="max-width: 1100px">
+
+      <div class="w3-padding-64" id="welcome">
+        <h1 class="w3-center">WELCOME</h1>
+      <div class="card">
+        <h2 class="w3-left w3-margin-left">Announcements</h2>
+        <textarea class="scrollable-text"> 🏊‍♂️ Upcoming Meet Alert! 🏆: Attention, swimmers! Get ready to dive into action as we gear up for our next exciting meet against our rivals, Sudbury Swim and Tennis Club! Mark your calendars for Saturday, July 13th, at 10:00 AM. Let's show our strength, skill, and team spirit as we make waves in the pool and strive for victory!
+
+          🚨 Pool Closure Notice 🚨: Attention, team! Please note that the pool will be temporarily closed for maintenance from Monday, July 15th, to Friday, July 19th. During this time, there will be no practices or swim sessions. We apologize for any inconvenience and appreciate your understanding as we ensure the pool remains in top condition for our future training and competitions.
+          
+          🎉 Celebrating Success! 🥳: Hip-hip-hooray! Let's give a big round of applause to our incredible swim team for their outstanding performance at the recent championships! With hard work, dedication, and sheer determination, our swimmers showcased their talent and brought home several medals, setting new personal bests along the way. Let's continue to support and cheer each other on as we strive for even greater achievements in the pool!</textarea>
+      </div>
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img src="Swimming.jpeg" style="width:100%">
+          <div class="text">Learning with Coach Emma!</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img src="IMG_1577.jpeg" style="width:100%">
+          <div class="text">Codman Pride!</div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img src="IMG_1605.jpeg" style="width:100%">
+          <div class="text">Fun at Practice!</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4 / 4</div>
+          <img src="IMG_1621.jpeg" style="width:100%">
+          <div class="text">Swim Meet Warm Up!</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 5</div>
+          <img src="SST.jpeg" style="width:100%">
+          <div class="text">Competition!</div>
+        </div>
+      
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+      
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+      
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+      
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+      
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";  
+        dots[slideIndex-1].className += " active";
+      }
+      </script>
+      
+      </div>
+<hr />  
+ 
+<div class="w3-padding-64" id="about">
+  <h1 class="w3-center">ABOUT</h1>
+  <div class="w3-container"><h2 class="w3-left">History</h2>
+  </div>
+    <p>
+      <div class="my-img-container-1 my-float-right my-padding-left">
+        <!-- BEG children -->
+        <div>
+          <!-- div 1 - adjacent sibling of div 2 -->
+          <img
+            src="Codman.jpeg"
+            alt="Winners"
+                />
+        </div>
+      </div>
+    
+      The Codman Swim Team has a rich and storied history that dates back to the early 1960s when a group of passionate swimmers came together to form a community dedicated to the sport. Originally known as the "Codman Aquatic Club," the team started with just a handful of members practicing in local lakes.
+      Throughout the decades, the Codman Swim Team grew in both size and reputation, becoming a powerhouse in the region's swimming scene. With a focus on fostering talent, teamwork, and sportsmanship, the team attracted swimmers of all ages and skill levels, from beginners to seasoned competitors.
+      In the 1980s, the Codman Swim Team expanded its facilities with the construction of the Codman Swimming Pool, complete with a brand new pool. This marked a new era for the team, allowing them to host prestigious competitions and attract top-tier coaches and athletes. Here is the first and only time we've won the Minuteman League Championships!
+  
+    </p>
+    <p>
+      Beyond the pool, the team has also been active in community outreach, promoting water safety education and providing opportunities for underprivileged youth to learn to swim.
+      Today, the Codman Swim Team continues to uphold its legacy of excellence, camaraderie, and dedication to the sport of swimming. With a strong foundation built on passion, perseverance, and teamwork, the team looks forward to creating even more waves of success in the years to come. This team is full of love and joy and is the absolute best part of any summer!
+    </p>
+    <a href="https://www.lincolntown.org/206/Parks-Recreation" target="_blank">Lincoln Parks and Rec</a><br>
+    <div class="w3-container"><h2 class="w3-lef">Coaches</h2></div>
+    <p>
+      <div class="my-img-container-2 my-float-left my-padding-right">
+        <!-- BEG children -->
+        <div>
+          <!-- div 1 - adjacent sibling of div 2 -->
+          <img
+            src="Coaches.jpeg"
+            alt="Coaches"
+          />
+        </div>
+      </div>
+      The Codman Swim Team is known for its dedicated head coach Sarah Feather. Sarah has been working with the team for 5 years, as well as being a librarian in the town.  
+
+    </p>
+    <p>
+      Other coaches include Jenny, Nick, Will, Casey, Tamara, and Liam. Codman coaches are good friends, as well as co-workers, and spend a lot of time in the summer together. It's a fun, but challenging, job that requires a good deal of commitment. Our coaches go through rigorous training and have been Codman lifeguards for years! Follow this link if you would like to also be a Codman WSI for Water Safety Instructor certification.
+
+    </p>
+    <a href="https://www.redcross.org/take-a-class/swimming/water-safety/water-safety-instructor-certification " target="_blank">Red Cross Water Safety Instructor Certification</a>
+  </div>
+
+
+<hr />
+
+<div class="w3-padding-64" id="schedule">
+  <h1 class="w3-center">SCHEDULE</h1>
+  
+  <table id="myTable">
+    <thead>
+      <tr>
+        <th><h2>Opponent</h2></th>
+        <th><h2>Date</h2></th>
+        <th><h2>Warm Up</h2></th>
+        <th><h2>Start</h2></th>
+        <th><h2>Location</h2></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Burlington</td>
+        <td>6/29</td>
+        <td>8 am</td>
+        <td>9 am</td>
+        <td>Codman</td>
+      </tr>
+      <tr>
+        <td>Concord Country Club</td>
+        <td>7/9</td>
+        <td>4 pm</td>
+        <td>5 pm</td>
+        <td>Concord Country Club</td>
+      </tr>
+      <tr>
+        <td>Greenwood</td>
+        <td>7/13</td>
+        <td>8 am</td>
+        <td>9 am</td>
+        <td>Codman</td>
+      </tr>
+      <tr>
+        <td>Thoreau Club</td>
+        <td>7/16</td>
+        <td>4 pm</td>
+        <td>5 pm</td>
+        <td>Thoreau Club</td>
+      </tr>
+      <tr>
+        <td>Sudbury S&T</td>
+        <td>7/23</td>
+        <td>4 pm</td>
+        <td>5 pm</td>
+        <td>Sudbury S&T</td>
+      </tr>
+      <tr>
+        <td>Championships</td>
+        <td>8/3</td>
+        <td>7 am</td>
+        <td>9 am</td>
+        <td>Codman</td>
+      </tr>
+      <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+
+  <script>
+    // sortable table
+    $(document).ready(function () {
+      $("table#myTable").tablesorter({
+        sortList: [[1, 0]], // first index - column. second index - 0 for asc; 1 for desc
+        CssAsc: "tablesorter-headerAsc",
+        CssDesc: "tablesorter-headerDesc",
+      });
+    });
+  </script>
+<button onclick="myAccordion('demoAccordion')" class="w3-button w3-orange w3-hover-orange">Swim Meet Etiquette</button>
+
+<!-- Accordion content -->
+<div id="demoAccordion" class="w3-panel w3-hide">
+  <ul>
+    <li>Arrive 30 minutes early</li>
+    <li>Check in with coaches and receive event information</li>
+    <li>Get in the pool on time - warm ups are full, especially at Champs</li>
+    <li>Act with good sportsmanship</li>
+    <li>Pay attention to our event pole and bull pen volunteers to get to the bull pen at the correct time</li>
+    <li>See your coach after your swim to get feedback</li>
+    <li>Leave your area cleaner than it was when you arrived</li>
+  </ul>
+</div>
+
+<button onclick="myAccordion('Accordion2')" class="w3-button w3-orange w3-hover-orange">Swim Meet Dress Code</button>
+
+<!-- Accordion content -->
+<div id="Accordion2" class="w3-panel w3-hide">
+  <ul>
+    <p>While in the water:</p>
+    <li>Codman Suit (or any suit in Codman colors)</li>
+    <li>Cap and Goggles (optional)</li>
+    <p>Out of the water:</p>
+    <li>Codman gear (tshirts, sweatshirts, sweatpants)</li>
+    <li>Be sure to stay warm! You will get cold, even in the hottest part of the summer!</li>
+  </ul>
+</div>
+
+<script>
+  function myAccordion(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+      x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(
+          "w3-orange",
+          "w3-darkblue"
+        );
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+      x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(
+          "w3-darkblue",
+          "w3-orange"
+        );
+    }
+  }
+</script>
+
+</div>
+
+
+
+
+<hr/>
+
+<div class="w3-padding-64" id="learn">
+  <h1 class="w3-center">LEARN</h1>
+  
+<h2 class="w3-center">Stroke Drills</h2>
+
+
+<div class="w3-row">
+  <div class="flex-container">
+    <div>
+    <iframe
+      style="width: 100%; flex:auto"
+      src="https://www.youtube.com/embed/0N5Mzazwnrg"
+      title="Freestyle Drills"
+      frameborder="1px"
+      allow="autoplay; encrypted-media"
+    >
+    </iframe>
+    <h3>Freestyle</h3>
+    </div>
+
+    <div>
+      <iframe
+        style="width: 100%; flex:auto"
+        src="https://www.youtube.com/embed/-hayxgpNw6s"
+        title="Backstroke Drills"
+        frameborder="1px"
+        allow="autoplay; encrypted-media"
+      >
+      </iframe>
+      <h3>Backstroke</h3>
+      </div>
+  </div>
+</div>
+
+<div class="w3-row">
+  <div class="flex-container">
+
+    <div>
+      <iframe
+        style="width: 100%; flex:auto"
+        src="https://www.youtube.com/embed/Elb2uTpW7qQ"
+        title="Breaststroke Drills"
+        frameborder="1px"
+        allow="autoplay; encrypted-media"
+      >
+      </iframe>
+      <h3>Breaststroke</h3>
+      </div>
+
+      <div>
+        <iframe
+          style="width: 100%; flex:auto"
+          src="https://www.youtube.com/embed/_tNdNe85rsg"
+          title="Butterfly Drills"
+          frameborder="1px"
+          allow="autoplay; encrypted-media"
+        >
+        </iframe>
+        <h3>Butterfly</h3>
+        </div>
+
+  </div>
+</div>
+
+<h2 class="w3-center">Other Drills</h2>
+
+<div class="w3-row">
+  <div class="flex-container">
+
+    <div>
+      <iframe
+        style="width: 100%; flex:auto"
+        src="https://www.youtube.com/embed/9QrKpWnVCZ4"
+        title="Starts"
+        frameborder="1px"
+        allow="autoplay; encrypted-media"
+      >
+      </iframe>
+      <h3>Starts</h3>
+      </div>
+
+      <div>
+        <iframe
+          style="width: 100%; flex:auto"
+          src="https://www.youtube.com/embed/Se1j7U8EI2o"
+          title="Turns"
+          frameborder="1px"
+          allow="autoplay; encrypted-media"
+        >
+        </iframe>
+        <h3>Turns</h3>
+        </div>
+
+      
+  </div>
+</div>
+</div>
+
+<hr />
+
+<div class="w3-padding-64" id="gallery">
+  <h1 class="w3-center">GALLERY</h1>
+  <h2 class="w3-margin-left">Meets</h2>
+
+  <div class="w3-row-padding">
+    <div class="w3-col s4">
+      <img
+        src="pool.jpg"
+        style="width: 100%; cursor: zoom-in"
+        onclick="document.getElementById('modal01').style.display = 'block'"
+        class="w3-hover-shadow"
+      />
+    </div>
+    <div class="w3-col s4">
+      <img
+        src="team.jpeg"
+        style="width: 100%; cursor: zoom-in"
+        onclick="document.getElementById('modal02').style.display = 'block'"
+        class="w3-hover-shadow"
+      />
+    </div>
+    <div class="w3-col s4">
+      <img
+        src="writing.jpeg"
+        style="width: 100%; cursor: zoom-in"
+        onclick="document.getElementById('modal03').style.display = 'block'"
+        class="w3-hover-shadow"
+      />
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-col s4"></div>
+    <div class="w3-col s4"></div>
+    <div class="w3-col s4"></div>
+  </div>
+
+  <div
+    id="modal01"
+    class="w3-modal"
+    onclick="this.style.display = 'none'"
+  >
+    <span
+      class="w3-text-orange w3-hover-text-blue w3-container w3-display-topright w3-xxlarge"
+      style="cursor: pointer"
+    >
+      &times;
+    </span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <h4 class="w3-center">Burlington</h4>
+      <img src="pool.jpg" style="width: 100%; height: 100%;" />
+    </div>
+  </div>
+
+  <div
+    id="modal02"
+    class="w3-modal"
+    onclick="this.style.display = 'none'"
+  >
+    <span
+      class="w3-text-white w3-hover-text-blue w3-container w3-display-topright w3-xxlarge"
+      style="cursor: pointer"
+    >
+      &times;
+    </span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <h4 class="w3-center">SS&T</h4>
+      <img
+        src="team.jpeg"
+        style="width: 100%"
+      />
+    </div>
+  </div>
+
+  <div
+    id="modal03"
+    class="w3-modal"
+    onclick="this.style.display = 'none'"
+  >
+    <span
+      class="w3-text-white w3-hover-text-blue w3-container w3-display-topright w3-xxlarge"
+      style="cursor: pointer"
+    >
+      &times;
+    </span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <h4 class="w3-center">Greenwood</h4>
+      <img src="writing.jpeg" style="width: 100%" />
+    </div>
+  </div>
+</div>
+
+<h2 class="w3-margin-left">Practice</h2>
+
+  <div class="w3-row-padding">
+    <div class="w3-col s4">
+      <img
+        src="cutie.jpeg"
+        style="width: 100%; cursor: zoom-in"
+        onclick="document.getElementById('modal04').style.display = 'block'"
+        class="w3-hover-shadow"
+      />
+    </div>
+    <div class="w3-col s4">
+      <img
+        src="rat.jpeg"
+        style="width: 100%; cursor: zoom-in"
+        onclick="document.getElementById('modal05').style.display = 'block'"
+        class="w3-hover-shadow"
+      />
+    </div>
+    <div class="w3-col s4">
+      <img
+        src="Goodjob.jpeg"
+        style="width: 100%; cursor: zoom-in"
+        onclick="document.getElementById('modal06').style.display = 'block'"
+        class="w3-hover-shadow"
+      />
+    </div>
+  </div>
+  <div class="w3-row-padding">
+    <div class="w3-col s4"></div>
+    <div class="w3-col s4"></div>
+    <div class="w3-col s4"></div>
+  </div>
+
+  <div
+    id="modal04"
+    class="w3-modal"
+    onclick="this.style.display = 'none'"
+  >
+    <span
+      class="w3-text-white w3-hover-text-blue w3-container w3-display-topright w3-xxlarge"
+      style="cursor: pointer"
+    >
+      &times;
+    </span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <h4 class="w3-center">Ben</h4>
+      <img src="cutie.jpeg" style="width: 100%; height: 100%;" />
+    </div>
+  </div>
+
+  <div
+    id="modal05"
+    class="w3-modal"
+    onclick="this.style.display = 'none'"
+  >
+    <span
+      class="w3-text-white w3-hover-text-blue w3-container w3-display-topright w3-xxlarge"
+      style="cursor: pointer"
+    >
+      &times;
+    </span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <h4 class="w3-center">RAT!</h4>
+      <img
+        src="rat.jpeg"
+        style="width: 100%"
+      />
+    </div>
+  </div>
+
+  <div
+    id="modal06"
+    class="w3-modal"
+    onclick="this.style.display = 'none'"
+  >
+    <span
+      class="w3-text-white w3-hover-text-blue w3-container w3-display-topright w3-xxlarge"
+      style="cursor: pointer"
+    >
+      &times;
+    </span>
+    <div class="w3-modal-content w3-animate-zoom">
+      <h4 class="w3-center">Fun after Champs!</h4>
+      <img src="Goodjob.jpeg" style="width: 100%" />
+    </div>
+  </div>
+</div>
+  
+</div>
+  
+  
+   
+
+
+      </div>
+
+
+
+  
+      <footer>
+        <div class="social-icons">
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook"></i>
+          </div>
+          <div class="contact-info">
+            <p>Contact Info: feathersa@gmail.com </p>
+          </div>
+          <div class="copyright">
+            <p>&copy; 2024</p>
+          </div>
+      </footer>
+      
+
+</body>
+</html>
